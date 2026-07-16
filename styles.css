@@ -1,0 +1,837 @@
+/* ===========================================================
+   VORTEX DEV — Hoja de estilos principal
+   -----------------------------------------------------------
+   Está organizada en secciones para que sea fácil de encontrar
+   lo que quieras cambiar:
+     1. Variables de marca (colores, tipografía)
+     2. Estilos generales (reset básico, tipografía)
+     3. Header y navegación
+     4. Footer
+     5. Botones y componentes reutilizables
+     6. Página de inicio (carrusel)
+     7. Página "Quiénes somos"
+     8. Página "Portafolio y precios"
+     9. Página "Contáctanos"
+    10. Página "Testimonios"
+    11. Responsive (pantallas pequeñas)
+   =========================================================== */
+
+/* 1. VARIABLES DE MARCA
+   Cambia estos valores y se actualiza todo el sitio. */
+:root {
+  --navy: #1b1035;        /* Violeta Espacial (color principal) */
+  --navy-light: #241a45;  /* Violeta un poco más claro, para tarjetas sobre fondo oscuro */
+  --cyan: #00d9ff;        /* Cian Eléctrico (color de acento) */
+  --white: #ffffff;
+  --bg-light: #f6f5fa;    /* Fondo claro para secciones sobre blanco */
+  --text-dark: #241f36;
+  --text-muted: #6b667e;
+  --border-light: #e3e0f0;
+
+  --font-heading: "Space Grotesk", "Segoe UI", Arial, sans-serif;
+  --font-body: "Inter", "Segoe UI", Arial, sans-serif;
+
+  --radius: 14px;
+  --max-width: 1100px;
+}
+
+/* 2. ESTILOS GENERALES */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--text-dark);
+  background: var(--white);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  color: var(--navy);
+  line-height: 1.2;
+  margin: 0 0 0.5em 0;
+}
+
+p {
+  margin: 0 0 1em 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section {
+  padding: 4rem 0;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--text-muted);
+  max-width: 640px;
+  margin: 0 auto 3rem auto;
+}
+
+/* Respeta a las personas que prefieren menos animación */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Contorno de foco visible para navegación con teclado */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--cyan);
+  outline-offset: 2px;
+}
+
+/* 3. HEADER Y NAVEGACIÓN */
+.site-header {
+  background: var(--navy);
+  color: var(--white);
+}
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.brand img {
+  height: 40px;
+  width: auto;
+  border-radius: 6px;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.brand-name {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.brand-tagline {
+  font-size: 0.75rem;
+  color: var(--cyan);
+  letter-spacing: 0.03em;
+}
+
+.main-nav {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  margin: 0;
+  padding: 0.9rem 1.5rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.main-nav a {
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.4rem 0.2rem;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.main-nav a:hover,
+.main-nav a:focus-visible,
+.main-nav a[aria-current="page"] {
+  color: var(--cyan);
+  border-bottom-color: var(--cyan);
+}
+
+/* Menú móvil (hamburguesa) */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+/* 4. FOOTER */
+.site-footer {
+  background: var(--navy);
+  color: var(--white);
+  padding: 1.6rem 1.5rem;
+}
+
+.footer-links {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.5rem;
+}
+
+.footer-links a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #d8d3ec;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover,
+.footer-links a:focus-visible {
+  color: var(--cyan);
+}
+
+.footer-note {
+  text-align: center;
+  font-size: 0.75rem;
+  color: #7a749a;
+  margin-top: 1rem;
+}
+
+/* 5. BOTONES Y COMPONENTES REUTILIZABLES */
+.btn {
+  display: inline-block;
+  padding: 0.85rem 1.8rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-family: var(--font-heading);
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background: var(--cyan);
+  color: var(--navy);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 8px 20px rgba(0, 217, 255, 0.35);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--white);
+  border: 2px solid var(--white);
+}
+
+.btn-outline:hover {
+  background: var(--white);
+  color: var(--navy);
+}
+
+.card {
+  background: var(--white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+}
+
+/* Círculo decorativo con número/inicial (inspirado en el isotipo de espiral) */
+.badge-circle {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--cyan);
+  color: var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* 6. PÁGINA DE INICIO — CARRUSEL */
+.hero-carousel {
+  position: relative;
+  overflow: hidden;
+  background: var(--navy);
+}
+
+.hero-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.hero-slide {
+  min-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 5rem 2rem;
+  min-height: 420px;
+}
+
+.hero-slide-1 {
+  background: linear-gradient(135deg, #1b1035 0%, #2c1c5c 100%);
+}
+
+.hero-slide-2 {
+  background: linear-gradient(135deg, #241a45 0%, #1b1035 100%);
+}
+
+.hero-slide-3 {
+  background: linear-gradient(135deg, #00293a 0%, #1b1035 70%);
+}
+
+.hero-content {
+  max-width: 620px;
+}
+
+.hero-eyebrow {
+  color: var(--cyan);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.hero-content h2 {
+  color: var(--white);
+  font-size: 2.1rem;
+  margin-bottom: 0.75rem;
+}
+
+.hero-content p {
+  color: #d8d3ec;
+  font-size: 1.05rem;
+}
+
+/* El slide de testimonios se destaca a propósito: más llamativo,
+   con el color cian de fondo para que invite a hacer clic. */
+.hero-slide-testimonials {
+  background: linear-gradient(135deg, #00d9ff 0%, #00a6c7 100%);
+  cursor: pointer;
+}
+
+.hero-slide-testimonials .hero-eyebrow {
+  color: var(--navy);
+}
+
+.hero-slide-testimonials h2,
+.hero-slide-testimonials p {
+  color: var(--navy);
+}
+
+.hero-slide-testimonials .btn-primary {
+  background: var(--navy);
+  color: var(--white);
+  font-size: 1.05rem;
+  padding: 1rem 2.2rem;
+}
+
+.hero-slide-testimonials .btn-primary:hover {
+  box-shadow: 0 8px 20px rgba(27, 16, 53, 0.4);
+}
+
+.hero-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.12);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  color: var(--white);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 1.3rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition: background 0.2s ease;
+}
+
+.hero-arrow:hover,
+.hero-arrow:focus-visible {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.hero-arrow-left {
+  left: 1.2rem;
+}
+
+.hero-arrow-right {
+  right: 1.2rem;
+}
+
+.hero-dots {
+  position: absolute;
+  bottom: 1.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+  z-index: 2;
+}
+
+.hero-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.hero-dot[aria-current="true"] {
+  background: var(--cyan);
+}
+
+/* Sección corta con la propuesta de valor, debajo del carrusel */
+.value-strip {
+  background: var(--bg-light);
+  padding: 3rem 0;
+}
+
+.value-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.value-item {
+  text-align: center;
+}
+
+.value-item h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.3rem;
+}
+
+.value-item p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* 7. PÁGINA "QUIÉNES SOMOS" */
+.page-hero {
+  background: var(--navy);
+  color: var(--white);
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.page-hero h1 {
+  color: var(--white);
+  font-size: 2.2rem;
+}
+
+.page-hero p {
+  color: #d8d3ec;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.mission-vision {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.mission-vision .card h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.team-member {
+  text-align: center;
+}
+
+.photo-placeholder {
+  aspect-ratio: 1 / 1;
+  border: 2px dashed var(--border-light);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  text-align: center;
+  padding: 0.5rem;
+  margin-bottom: 0.6rem;
+  background: var(--bg-light);
+}
+
+.team-member h4 {
+  font-size: 0.95rem;
+  margin-bottom: 0.1rem;
+}
+
+.team-member span {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.big-photo-placeholder {
+  aspect-ratio: 21 / 9;
+  border: 2px dashed var(--border-light);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  background: var(--bg-light);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.2rem;
+  margin-top: 3rem;
+}
+
+.value-card {
+  text-align: center;
+  padding: 1.2rem 0.8rem;
+}
+
+.value-card .badge-circle {
+  margin: 0 auto 0.8rem auto;
+}
+
+.value-card h4 {
+  font-size: 0.95rem;
+  margin-bottom: 0.3rem;
+}
+
+.value-card p {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* 8. PÁGINA "PORTAFOLIO Y PRECIOS" */
+.pricing-table-wrap {
+  overflow-x: auto;
+  margin-bottom: 3rem;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+}
+
+table.pricing-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 640px;
+}
+
+.pricing-table th,
+.pricing-table td {
+  padding: 1rem 1.2rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.pricing-table thead th {
+  background: var(--navy);
+  color: var(--white);
+  font-family: var(--font-heading);
+}
+
+.pricing-table tbody tr:nth-child(even) {
+  background: var(--bg-light);
+}
+
+.pricing-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.pricing-table td.price {
+  font-weight: 700;
+  color: var(--navy);
+  white-space: nowrap;
+}
+
+.diff-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.diff-card {
+  text-align: center;
+}
+
+.diff-card .badge-circle {
+  margin: 0 auto 1rem auto;
+}
+
+/* 9. PÁGINA "CONTÁCTANOS" */
+.contact-wrap {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0 4rem 0;
+}
+
+.contact-form {
+  width: 100%;
+  max-width: 560px;
+  background: var(--bg-light);
+  border: 1px solid var(--border-light);
+  border-radius: 20px;
+  padding: 2.5rem;
+}
+
+.contact-form h2 {
+  text-align: center;
+  margin-bottom: 0.3rem;
+}
+
+.contact-form .form-note {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 1.8rem;
+}
+
+.form-group {
+  margin-bottom: 1.3rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+  color: var(--navy);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  background: var(--white);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--cyan);
+  box-shadow: 0 0 0 3px rgba(0, 217, 255, 0.2);
+}
+
+.form-error {
+  color: #c0392b;
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
+  min-height: 1em;
+}
+
+.contact-form .btn {
+  width: 100%;
+  font-size: 1rem;
+}
+
+.form-status {
+  margin-top: 1.2rem;
+  padding: 0.9rem 1rem;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  text-align: center;
+  display: none;
+}
+
+.form-status.visible {
+  display: block;
+}
+
+.form-status.success {
+  background: #e5f9ec;
+  color: #0f7a3d;
+  border: 1px solid #b6ecc9;
+}
+
+/* 10. PÁGINA "TESTIMONIOS" */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6rem;
+}
+
+.testimonial-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.testimonial-photo {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 2px dashed var(--border-light);
+  background: var(--bg-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.testimonial-quote {
+  font-style: italic;
+  color: var(--text-dark);
+}
+
+.testimonial-name {
+  font-weight: 700;
+  color: var(--navy);
+  font-size: 0.9rem;
+}
+
+.testimonial-role {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.testimonial-header {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+/* 11. RESPONSIVE — pantallas medianas y pequeñas */
+@media (max-width: 900px) {
+  .team-grid,
+  .values-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .testimonials-grid,
+  .diff-grid,
+  .value-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mission-vision {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .main-nav ul {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    text-align: center;
+  }
+
+  .main-nav ul.open {
+    display: flex;
+  }
+
+  .main-nav a {
+    display: block;
+    padding: 0.8rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .team-grid,
+  .values-grid,
+  .testimonials-grid,
+  .diff-grid,
+  .value-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero-content h2 {
+    font-size: 1.6rem;
+  }
+
+  .hero-slide {
+    padding: 3.5rem 1.2rem;
+    min-height: 360px;
+  }
+
+  .contact-form {
+    padding: 1.8rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .team-grid,
+  .values-grid,
+  .testimonials-grid,
+  .diff-grid,
+  .value-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

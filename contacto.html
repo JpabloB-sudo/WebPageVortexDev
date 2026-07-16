@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto - Vortex Dev</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="top-bar">
+      <div class="brand">
+        <img src="logo.jpg" alt="Vortex Dev Logo" onerror="this.style.display='none'">
+        <div class="brand-text">
+          <span class="brand-name">VORTEX DEV</span>
+          <span class="brand-tagline">La fuerza detrás de tu web.</span>
+        </div>
+      </div>
+      <button class="nav-toggle" aria-label="Abrir menú" id="navToggle">☰</button>
+    </div>
+    <nav class="main-nav">
+      <ul id="navMenu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="quienes-somos.html">¿Quiénes somos?</a></li>
+        <li><a href="portafolio.html">Portafolio y precios</a></li>
+        <li><a href="contacto.html" aria-current="page">Contáctanos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="contact-wrap">
+      
+      <!-- Contenedor del formulario (Boceto) -->
+      <form class="contact-form" id="contactForm" novalidate>
+        <h2>¿Listo para impulsar tu web?</h2>
+        <p class="form-note">Escríbenos y nuestro equipo te responderá en menos de 2 horas.</p>
+
+        <div class="form-group">
+          <label for="fullName">Nombre Completo</label>
+          <input type="text" id="fullName" placeholder="Ej. Juan Pérez">
+          <div class="form-error" id="nameError"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Correo Electrónico</label>
+          <input type="email" id="email" placeholder="juan@ejemplo.com">
+          <div class="form-error" id="emailError"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Mensaje / Servicio Requerido</label>
+          <textarea id="message" rows="4" placeholder="¿Cómo te podemos ayudar?"></textarea>
+          <div class="form-error" id="messageError"></div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Enviar Solicitud</button>
+        
+        <div class="form-status" id="formStatus"></div>
+      </form>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-links">
+      <a href="mailto:contacto@vortexdev.com">📧 contacto@vortexdev.com</a>
+      <a href="https://wa.me/573000000000" target="_blank">💬 WhatsApp</a>
+      <a href="https://instagram.com/vortexdev" target="_blank">📸 @vortexdev</a>
+    </div>
+    <p class="footer-note">© 2026 Vortex Dev. Todos los derechos reservados. Institución Universitaria de Barranquilla.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

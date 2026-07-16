@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vortex Dev - La fuerza detrás de tu web</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Fuentes de Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- HEADER Y NAVEGACIÓN -->
+  <header class="site-header">
+    <div class="top-bar">
+      <div class="brand">
+        <img src="logo.jpg" alt="Vortex Dev Logo" onerror="this.style.display='none'">
+        <div class="brand-text">
+          <span class="brand-name">VORTEX DEV</span>
+          <span class="brand-tagline">La fuerza detrás de tu web.</span>
+        </div>
+      </div>
+      <button class="nav-toggle" aria-label="Abrir menú" id="navToggle">☰</button>
+    </div>
+    
+    <nav class="main-nav">
+      <ul id="navMenu">
+        <li><a href="index.html" aria-current="page">Inicio</a></li>
+        <li><a href="quienes-somos.html">¿Quiénes somos?</a></li>
+        <li><a href="portafolio.html">Portafolio y precios</a></li>
+        <li><a href="contacto.html">Contáctanos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- CARRUSEL -->
+  <main>
+    <section class="hero-carousel">
+      <div class="hero-track" id="carouselTrack">
+        
+        
+        <div class="hero-slide hero-slide-1">
+          <div class="hero-content">
+            <span class="hero-eyebrow">Velocidad y Precisión</span>
+            <h2>Vanguardia en Desarrollo Web</h2>
+            <p>Creamos sitios rápidos, seguros y diseñados a la medida para que tu negocio nunca deje de crecer.</p>
+            <a href="portafolio.html" class="btn btn-primary">Ver Planes</a>
+          </div>
+        </div>
+
+        
+        <div class="hero-slide hero-slide-2">
+          <div class="hero-content">
+            <span class="hero-eyebrow">Cuidado Continuo</span>
+            <h2>Soporte Técnico en menos de 2 Horas</h2>
+            <p>Nos encargamos del monitoreo, copias de seguridad y optimización constante de tu plataforma.</p>
+            <a href="contacto.html" class="btn btn-outline">Saber Más</a>
+          </div>
+        </div>
+
+        
+        <div class="hero-slide hero-slide-testimonials" onclick="window.location.href='testimonios.html'">
+          <div class="hero-content">
+            <span class="hero-eyebrow">Opiniones de Clientes</span>
+            <h2>Escucha la opinión de nuestros clientes satisfechos</h2>
+            <p>Haz clic aquí para ver por qué más empresas confían el motor de su negocio digital en nosotros.</p>
+            <button class="btn btn-primary">Ver Testimonios</button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Controles del carrusel -->
+      <button class="hero-arrow hero-arrow-left" id="prevBtn" aria-label="Anterior">←</button>
+      <button class="hero-arrow hero-arrow-right" id="nextBtn" aria-label="Siguiente">→</button>
+
+      <!-- Circulos inferiores -->
+      <div class="hero-dots">
+        <button class="hero-dot" aria-current="true" data-slide="0"></button>
+        <button class="hero-dot" data-slide="1"></button>
+        <button class="hero-dot" data-slide="2"></button>
+      </div>
+    </section>
+
+    <!-- Info bajo el carrusel -->
+    <section class="value-strip">
+      <div class="container value-grid">
+        <div class="value-item">
+          <h3>Respuesta Ágil</h3>
+          <p>Atención en tiempo récord.</p>
+        </div>
+        <div class="value-item">
+          <h3>Seguridad Activa</h3>
+          <p>Monitoreo y copias de seguridad.</p>
+        </div>
+        <div class="value-item">
+          <h3>Soporte Humano</h3>
+          <p>Sin chatbots ni largas esperas.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-links">
+      <a href="mailto:contacto@vortexdev.com">📧 contacto@vortexdev.com</a>
+      <a href="https://wa.me/573000000000" target="_blank">💬 WhatsApp</a>
+      <a href="https://instagram.com/vortexdev" target="_blank">📸 @vortexdev</a>
+    </div>
+    <p class="footer-note">© 2026 Vortex Dev. Todos los derechos reservados. Institución Universitaria de Barranquilla.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

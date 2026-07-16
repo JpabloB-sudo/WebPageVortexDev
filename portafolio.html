@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio y Precios - Vortex Dev</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="top-bar">
+      <div class="brand">
+        <img src="logo.jpg" alt="Vortex Dev Logo" onerror="this.style.display='none'">
+        <div class="brand-text">
+          <span class="brand-name">VORTEX DEV</span>
+          <span class="brand-tagline">La fuerza detrás de tu web.</span>
+        </div>
+      </div>
+      <button class="nav-toggle" aria-label="Abrir menú" id="navToggle">☰</button>
+    </div>
+    <nav class="main-nav">
+      <ul id="navMenu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="quienes-somos.html">¿Quiénes somos?</a></li>
+        <li><a href="portafolio.html" aria-current="page">Portafolio y precios</a></li>
+        <li><a href="contacto.html">Contáctanos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1>Portafolio de Servicios y Precios</h1>
+      <p>Soluciones integrales de desarrollo y mantenimiento web diseñadas para brindarle tranquilidad a tu negocio.</p>
+    </div>
+  </section>
+
+  <main class="container section">
+    
+    <!-- Tabla de Portafolio y Precios (Boceto) -->
+    <h2 class="section-title">Nuestras Tarifas</h2>
+    <p class="section-subtitle">Precios claros y sin cobros ocultos adaptados a tus necesidades.</p>
+
+    <div class="pricing-table-wrap">
+      <table class="pricing-table">
+        <thead>
+          <tr>
+            <th>Servicio</th>
+            <th>Descripción</th>
+            <th>Precio sugerido (COP)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Diseño y Desarrollo Web</strong></td>
+            <td>Creación de sitios modernos, optimizados y adaptados a dispositivos móviles.</td>
+            <td class="price">$1.800.000 - $6.000.000</td>
+          </tr>
+          <tr>
+            <td><strong>Plan de Mantenimiento Esencial</strong></td>
+            <td>Actualizaciones, copias de seguridad semanales, monitoreo y hasta 3 cambios de contenido al mes.</td>
+            <td class="price">$250.000 - $400.000 / mes</td>
+          </tr>
+          <tr>
+            <td><strong>Plan de Mantenimiento Integral</strong></td>
+            <td>Todo el plan esencial más backups diarios, escaneo de seguridad y hasta 8 cambios de contenido.</td>
+            <td class="price">$450.000 - $800.000 / mes</td>
+          </tr>
+          <tr>
+            <td><strong>Optimización de Velocidad</strong></td>
+            <td>Ajustes técnicos de caché, optimización de imágenes y velocidad de respuesta.</td>
+            <td class="price">$350.000 - $700.000</td>
+          </tr>
+          <tr>
+            <td><strong>SEO Técnico y Monitoreo</strong></td>
+            <td>Posicionamiento SEO orgánico, optimización estructural on-page y reporte mensual de resultados.</td>
+            <td class="price">$400.000 - $900.000 / mes</td>
+          </tr>
+          <tr>
+            <td><strong>Recuperación ante Incidentes</strong></td>
+            <td>Restauración y limpieza profunda de virus o errores imprevistos (soporte urgente).</td>
+            <td class="price">$400.000 - $900.000 / evento</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Valores de marca / ¿Qué nos hace diferentes? (Boceto: sección inferior de tarjetas) -->
+    <h2 class="section-title" style="margin-top: 4rem;">¿Qué nos hace diferentes?</h2>
+    <p class="section-subtitle">No somos solo desarrolladores; somos el departamento de tecnología que cuida tu marca.</p>
+
+    <div class="diff-grid">
+      <div class="card diff-card">
+        <div class="badge-circle"></div>
+        <h3 style="margin-top: 1rem;">Velocidad</h3>
+        <p>Garantizamos soporte y resolución en menos de 2 horas de forma ágil y oportuna.</p>
+      </div>
+      <div class="card diff-card">
+        <div class="badge-circle"></div>
+        <h3 style="margin-top: 1rem;">Precisión</h3>
+        <p>Correcciones limpias en el código sin alterar o comprometer otras funciones.</p>
+      </div>
+      <div class="card diff-card">
+        <div class="badge-circle"></div>
+        <h3 style="margin-top: 1rem;">Continuidad</h3>
+        <p>Trabajamos para que tu sitio esté en línea y totalmente optimizado las 24 horas del día.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-links">
+      <a href="mailto:contacto@vortexdev.com">📧 contacto@vortexdev.com</a>
+      <a href="https://wa.me/573000000000" target="_blank">💬 WhatsApp</a>
+      <a href="https://instagram.com/vortexdev" target="_blank">📸 @vortexdev</a>
+    </div>
+    <p class="footer-note">© 2026 Vortex Dev. Todos los derechos reservados. Institución Universitaria de Barranquilla.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
